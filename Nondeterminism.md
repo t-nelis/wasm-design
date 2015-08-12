@@ -25,7 +25,7 @@ other practical way to achieve [portable](Portability.md) native performance.
 The following is a list of the places where the WebAssembly specification
 currently admits nondeterminism:
 
- * [When threads are added as a feature](PostMVP.md#threads), even without
+ * [When threads are added as a feature](Threads.md), even without
    shared memory, nondeterminism will be visible through the global sequence of
    API calls. With shared memory, the result of load operations is
    nondeterministic.

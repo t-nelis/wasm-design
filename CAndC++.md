@@ -31,7 +31,7 @@ compilers need to support high-quality implementations.
 While [the MVP](MVP.md) will be fully functional, additional features enabling
 greater performance will be added soon after, including:
 
- * [Support for multi-threaded execution with shared memory](PostMVP.md#threads).
+ * [Support for multi-threaded execution with shared memory](Threads.md).
 
  * [Zero-cost C++ exception handling](PostMVP.md#zero-cost-exception-handling).
    C++ exceptions can be implemented without this, but this feature will
