@@ -24,7 +24,7 @@ added in the future to support
 
 `float` and `double` are the IEEE 754-2008 single- and double-precision types,
 which are native in WebAssembly. `long double` is the IEEE 754-2008
-quad-precision type, which is a software-emulated type. For performance and
+quad-precision type, which may be a software-emulated type. For performance and
 compatibility with other platforms, `float` and `double` are recommended for
 most uses.
 
