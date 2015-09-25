@@ -128,6 +128,12 @@ index. The infinite-precision sum of the address operand's value with the byte
 offset attribute's value is called the *effective address*, which is interpreted
 as an unsigned byte index.
 
+The linear memory operation names above specify a 0 offset. To specify a greater
+offset, the opcode name can be suffixed with `+n` for `n` any 32-bit unsigned
+integer. For example, `i32.load+4` specifies an `i32` load at offset 4 from the
+address operand, `i64.load16_s+2` specifies a 2-byte signed-extended-to-`i64`
+load at offset 2 from the address operand.
+
 Linear memory accesses access the bytes starting at the location in the linear
 memory storage indexed by the effective address, and extending for the number
 of bytes implied by the memory type attribute of the access.
@@ -161,9 +167,10 @@ to be a *natural* alignment.
 
 The linear memory operation names listed above specify natural alignment.
 To specify unnatural alignment, the opcode name can be suffixed with `/n` for
-`n` any integer power of 2. For example, `f64.load/2` specifies a `f32`
-load with 2-byte alignment; `i32.load16_s/1` specifies a signed 2-byte load
-that is unaligned (1-byte aligned).
+`n` any integer power of 2. The alignment suffix goes after the addressing
+suffix when both are present. For example, `f64.load/2` specifies a `f32`
+load with 2-byte alignment; `i32.load16_s+3/1` specifies a signed 2-byte load
+that is unaligned (1-byte aligned) at offset 3 from the address operand.
 
 The alignment applies to the effective address and not merely the address operand,
 i.e. the immediate offset is taken into account when considering alignment.
